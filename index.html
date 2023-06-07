@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+
+    <!-- Vue, A-frame -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@cb0bb8407968be713b79008548b7044908ba5729/dist/aframe-master.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
+    
+    <!-- Mediapipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm/vision_wasm_internal.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <!--     Mediapipe Drawing Tools -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--     Mediapipe Camera Tools -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- The website JavaScript file -->
+    <script src="/shader-utils.js" defer></script>
+    <script src="/shader.js" defer></script>
+    <script src="io.js" defer></script>
+    <script src="/game-logic.js" defer></script>
+    <script src="/script.js" defer></script>
+    <script src="/player.js" defer></script>
+    <script type='module' src="/gesture.js" defer></script>
+    <!-- <script src="/scene-studyroom.js" defer></script> -->
+   
+  </head>
+  <body>
+    <a-scene shadow="type: pcfsoft" vr-mode-ui="cardboardModeEnabled: true">
+      
+      <a-assets>
+        <!-- ASSETS GO HERE -->
+        <!-- COPY THEM INTO GLITCH "ASSETS", THEN PASTE THE URLS HERE -->
+        <!-- THEN USE THEM IN YOUR OBJECTS -->
+        <img
+          crossorigin="anonymous"
+          id="sphere-wizard"
+          src="https://cdn.glitch.global/30a67654-d5bb-4ace-967d-53e5bd89b165/fantasy_lands_in_a_wizard_s_study_room_an_ancient.jpg?v=1684813859945"
+        />
+
+        <!-- oak -->
+        <img
+          crossorigin="anonymous"
+          id="oak-diffuse"
+          src="https://cdn.glitch.global/30a67654-d5bb-4ace-967d-53e5bd89b165/oak%20wood%20diffuse%20map.png?v=1684818721537"
+        />
+        <img
+          crossorigin="anonymous"
+          id="oak-normal"
+          src="https://cdn.glitch.global/30a67654-d5bb-4ace-967d-53e5bd89b165/oak%20wood%20normal%20map.png?v=1684818724276"
+        />
+        
+        <!-- avatars -->
+        <img
+          crossorigin="anonymous"
+          id="person1"
+          src="https://cdn.glitch.global/b5ac0561-4ef4-49f5-bb27-5edc00428bba/Screen%20Shot%202023-05-28%20at%2011.47.11%20AM.png?v=1685292450194"
+        />
+        <img
+          crossorigin="anonymous"
+          id="minion"
+          src="https://cdn.glitch.global/b5ac0561-4ef4-49f5-bb27-5edc00428bba/Screenshot%202023-05-28%20at%2011.48.04%20AM.png?v=1685292493906"
+        />
+        
+        <img
+          crossorigin="anonymous"
+          id="person2"
+          src= "https://cdn.glitch.global/b5ac0561-4ef4-49f5-bb27-5edc00428bba/Screen%20Shot%202023-05-28%20at%2011.46.14%20AM.png?v=1685292405054"
+             />
+        
+        <img
+          crossorigin="anonymous"
+          id="person3"
+          src= "https://cdn.glitch.global/b5ac0561-4ef4-49f5-bb27-5edc00428bba/Screen%20Shot%202023-05-28%20at%2011.48.09%20AM.png?v=1685292505557"
+             />
+       
+        <img
+          crossorigin="anonymous"
+          id="person4"
+          src="https://cdn.glitch.global/b5ac0561-4ef4-49f5-bb27-5edc00428bba/Snipaste_2023-05-28_14-02-32.png?v=1685300607598"
+        />     
+      </a-assets>      
+      <!--  These are controlled by different Vue components    -->
+      <a-entity id="scene"></a-entity>
+    </a-scene>
+    <div id="controls"></div>
+    <div class="preview">
+      <video class="input_video" width="192px" height="144px"  autoplay muted playsinline></video>
+      <canvas class="guides"></canvas>
+    </div>
+    <iframe style="border: 0; height: 42px; position: absolute; top:90%" src="https://bandcamp.com/EmbeddedPlayer/track=2270855725/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="https://jamienord.bandcamp.com/track/wizard-room">Wizard Room by Jamie Nord</a></iframe>
+  </body>
+</html>

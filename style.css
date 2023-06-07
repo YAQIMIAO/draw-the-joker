@@ -1,0 +1,63 @@
+body,html {
+  width: 100%;
+  height: 100%
+}
+
+#controls {
+  color: #FFFFFF;
+  position: absolute;
+  top: 0px;
+  left:0px;
+  width: 300px;
+  border-radius: 0px 0px 15px 0px;
+  background: hsla(0, 100%, 100%, .3)
+}
+
+.collapsible {
+  color: #FFFFFF;
+  background: transparent;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 0px 0px 15px 0px;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.collapsible:hover {
+  background: hsla(0, 100%, 100%, .5)
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #222;
+}
+video {
+    max-width: 400px;
+    height: auto;
+    transform: scale(-1, 1);
+}
+.preview canvas {
+    transform: scale(-1, 1);
+}
+body {
+    margin: 0;
+}
+canvas {
+    display: block;
+}
+.guides {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 144;
+    width: 192;
+    z-index: 1;
+}
